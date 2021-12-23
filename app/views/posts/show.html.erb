@@ -1,34 +1,18 @@
 <section>
     <div class="container">
  
-        <button class="btn btn-primary" type="button">投稿作成</button>
-        <div class="media">
+        <%= link_to'新規投稿',new_path,class: "btn btn-primary" %>
+        <% @posts.each do |post| %>
+        <div class="media pb-3">
             <img class="mr-3 align-self-center" src="https://source.unsplash.com/random/90x94">
             <div class="media-body">
-                <h5>Center aligned media</h5>
-                <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio,
-                    vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla.
-                    Donec lacinia congue felis in faucibus.</p>
+                <h5><%= post.user_name %></h5>
+                <p><%= post.content %></p>
+                <p><small><%= post.created_at %></small></p>
             </div>
         </div>
-        <li class="media">
-            <img class="mr-3" src="https://source.unsplash.com/random/90x97">
-            <div class="media-body">
-                <h5>List based media object</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia
-                congue felis in faucibus.
-            </div>
-        </li>
-        <div class="media">
-            <img class="mr-3 mt-3" src="https://source.unsplash.com/random/90x90">
-            <div class="media-body">
-                <h5>Media heading</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in
-                vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue
-                felis in faucibus.
-            </div>
-        </div>
+        <% end %>
+        
     </div>
 
 
